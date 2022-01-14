@@ -1,7 +1,11 @@
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;  
-.link_page{
-    @apply block text-white hover:bg-indigo-500 px-4 py-3
+@tailwind utilities;
+
+/* .link_item{
+    @apply bg-red-500 flex text-white hover:bg-indigo-500 px-4 py-3
+} */
+#footer{
+    @apply bg-blue-900 text-center py-4 text-black
 }
