@@ -12,31 +12,34 @@ import adminAddnews from "./pages/admin/News/Adminaddnews";
 const router = new Navigo("/", { linksSelector: "a" });
 const print = (content) => {
     // document.getElementById("Header").innerHTML = Header.render();
-    document.getElementById("app").innerHTML = content;
+    document.getElementById("app").innerHTML = content.render();
+    if (content.afterRender) {
+        content.afterRender();
+    }
     // document.getElementById("footer").innerHTML = footer.render();
 };
 router.on({
     "/": () => {
-        print(Homepage.render());
+        print(Homepage);
     },
     "/newsjs/:id": ({ data }) => {
         const { id } = data;
         print(NewDetail.render(id));
     },
     "/sign_in": () => {
-        print(signIn.render());
+        print(signIn);
     },
     "/signUp": () => {
-        print(signUp.render());
+        print(signUp);
     },
     "/admin/dashboard": () => {
-        print(dashBoard.render());
+        print(dashBoard);
     },
     "/admin/news": () => {
-        print(adminNews.render());
+        print(adminNews);
     },
     "/admin/news/add": () => {
-        print(adminAddnews.render());
+        print(adminAddnews);
     },
 });
 router.resolve();
