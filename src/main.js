@@ -10,9 +10,9 @@ import adminNews from "./pages/admin/News";
 import adminAddnews from "./pages/admin/News/Adminaddnews";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const print = (content, id) => {
+const print = async (content, id) => {
     // document.getElementById("Header").innerHTML = Header.render();
-    document.getElementById("app").innerHTML = content.render(id);
+    document.getElementById("app").innerHTML = await content.render(id);
     if (content.afterRender) {
         content.afterRender();
     }

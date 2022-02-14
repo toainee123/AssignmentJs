@@ -1,7 +1,8 @@
-import data from "../data";
-import axios from "axios";
+import { getAll } from "../api/post";
+
 const Newsjs = {
-    render() {
+    async render() {
+        const { data } = await getAll()
         return `
         <h2 class="font-semibold text-2xl text-blue-900 my-4 uppercase">Tin tức học tập</h2>
         <div class="news">

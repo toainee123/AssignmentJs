@@ -1,10 +1,10 @@
 import instance from "./config";
 
 export const getAll = () => {
-    const url = `/post`;
+    const url = `/posts`;
     return instance.get(url)
 }
-export const get = () => {
-    const url = `/post${id}`;
+export const get = (id) => {
+    const url = `/posts/${id}`;
     return instance.get(url)
 }

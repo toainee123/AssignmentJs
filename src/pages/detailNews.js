@@ -1,15 +1,15 @@
-import data from "../data";
 import Header from "../component/header";
 import footer from "../component/footer";
+import { get } from "../api/post";
 const NewDetail = {
-    render(id) {
-        const result = data.find((post) => post.id === id);
+    async render(id) {
+        const {data} = await get(id);
         return /* html */ `
             <header>${Header.render()}</header>
             <div>
-                <h1>${result.title}</h1>
-                <img src="${result.img}" />
-                <div>${result.desc}</div>
+                <h1>${data.title}</h1>
+                <img src="${data.img}" />
+                <div>${data.desc}</div>
             </div>
             <footer>${footer.render()}</footer>
         `;

@@ -2,7 +2,7 @@ import Newsjs from "./newjs";
 import Header from "../component/header";
 
 const Homepage = {
-    render() {
+    async render() {
         return /* html */ `
             <header>
                 ${Header.render()}
@@ -12,7 +12,7 @@ const Homepage = {
                     <img src="https://picsum.photos/1500/400"/>
                 </div>
                 <div class="news">
-                    ${Newsjs.render()}
+                    ${await Newsjs.render()}
                 </div>
             </main>
             <div id="footer">
