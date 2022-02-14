@@ -32,9 +32,12 @@ const adminAddnews = {
       <main>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <!-- Replace with your content -->
-          <div class="px-4 py-6 sm:px-0">
-            
-          </div>
+          <form action="" id="form-add">
+              <input type="text" class="border border-black" id="title-post">
+              <input type="text" class="border border-black" id="img-post">
+              <textarea name="" id="desc-post" cols="30" rows="10" class="border border-black"></textarea>
+              <button class="bg-blue-500 p-4 text-white">Them</button>
+          </form>
           <!-- /End replace -->
         </div>
       </main>

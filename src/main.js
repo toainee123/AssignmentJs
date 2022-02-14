@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import Homepage from "./pages/homepage";
 import NewDetail from "./pages/detailNews";
 // import Header from "./component/header";
-// import footer from "./component/footer";
+import footer from "./component/footer";
 import signIn from "./pages/sign_in";
 import signUp from "./pages/sign_up";
 import dashBoard from "./pages/admin/Dashboard";
@@ -10,9 +10,9 @@ import adminNews from "./pages/admin/News";
 import adminAddnews from "./pages/admin/News/Adminaddnews";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const print = (content) => {
+const print = (content, id) => {
     // document.getElementById("Header").innerHTML = Header.render();
-    document.getElementById("app").innerHTML = content.render();
+    document.getElementById("app").innerHTML = content.render(id);
     if (content.afterRender) {
         content.afterRender();
     }
@@ -24,7 +24,7 @@ router.on({
     },
     "/newsjs/:id": ({ data }) => {
         const { id } = data;
-        print(NewDetail.render(id));
+        print(NewDetail, id);
     },
     "/sign_in": () => {
         print(signIn);

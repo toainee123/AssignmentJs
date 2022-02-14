@@ -8,7 +8,7 @@ const data = [
     },
     {
         createdAt: "2022-01-10T20:33:27.477Z",
-        title: "Yolanda Roob",
+        title: "Yolanda Roob", 
         img: "http://placeimg.com/640/480/sports",
         desc: "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
         id: "2",
