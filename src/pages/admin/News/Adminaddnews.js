@@ -1,5 +1,6 @@
 import navAdmin from "../header_dashboard";
-
+import { add } from "../../../api/post";
+import axios from "axios";
 const adminAddnews = {
     render() {
         return /* html */ `
@@ -39,13 +40,9 @@ const adminAddnews = {
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Thêm mới bài viết</h2>
           
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 space-y-6" id="formadd">
           <input type="hidden" name="remember" value="true">
           <div class="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label for="email-address" class="sr-only">Tên bài viết</label>
-              <input id="name" name="name" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Tên bài viết">
-            </div>
             <div>
               <label for="password" class="sr-only">Tiêu đề bài viết</label>
               <input id="title" name="title" type="text" autocomplete="current-password" required class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Tiêu đề bài viết">
@@ -85,8 +82,32 @@ const adminAddnews = {
     `;
     },
     afterRender() {
-        const btns = document.querySelectorAll(".btn");
-        console.log("btns");
+        const formadd = document.querySelector("#formadd");
+        const img = document.querySelector("#img");
+
+        img.addEventListener("change", async (e) => {
+          const file = e.target.files[0];
+          const CLOUD = "https://api.cloudinary.com/v1_1/toaibvph16467/image/upload";
+          const formData = new FormData();
+          formData.append("file", file);
+          formData.append("upload_preset", "fb8psmbv");
+          const reponse = await axios.post(CLOUD, formData, {
+            headers: {
+              "Content-Type": "application/form-data"
+            }
+          });
+          formadd.addEventListener("submit", (e) => {
+            e.preventDefault();
+            add({
+              title: document.querySelector("#title").value,
+              img: reponse.data.url,
+              desc: document.querySelector("#content").value,
+            });
+            
+          });
+          console.log(reponse.data.url)
+        });
+
     },
 };
 export default adminAddnews;
