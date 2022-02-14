@@ -5,7 +5,7 @@ const Newsjs = {
         return `
         <h2 class="font-semibold text-2xl text-blue-900 my-4 uppercase">Tin tức học tập</h2>
         <div class="news">
-            <div class="grid grid-cols-3 gap-8"
+            <div class="grid grid-cols-3 gap-8 mt-2"
                 ${data.map((post) => `
                     <div class="news-item border p-5 w-96">
                         <a href="/newsjs/${post.id}" >
