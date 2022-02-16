@@ -29,7 +29,7 @@ router.on({
     "/sign_in": () => {
         print(signIn);
     },
-    "/signUp": () => {
+    "/signup": () => {
         print(signUp);
     },
     "/admin/dashboard": () => {

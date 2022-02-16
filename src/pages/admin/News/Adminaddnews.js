@@ -96,6 +96,9 @@ const adminAddnews = {
               "Content-Type": "application/form-data"
             }
           });
+
+
+          // 
           formadd.addEventListener("submit", (e) => {
             e.preventDefault();
             add({

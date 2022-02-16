@@ -85,13 +85,6 @@
       "id": "12"
     },
     {
-      "createdAt": "2022-01-10T14:45:44.448Z",
-      "title": "Levi Turcotte",
-      "img": "http://placeimg.com/640/480/city",
-      "desc": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-      "id": "13"
-    },
-    {
       "createdAt": "2022-01-10T06:52:23.902Z",
       "title": "Eddie Crona",
       "img": "http://placeimg.com/640/480/technics",
@@ -118,12 +111,6 @@
       "img": "http://placeimg.com/640/480/nightlife",
       "desc": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
       "id": "17"
-    },
-    {
-      "title": "abc",
-      "img": "http://res.cloudinary.com/toaibvph16467/image/upload/v1644823664/jfuzd2sxooc5fqrjxhhi.png",
-      "desc": "xyz",
-      "id": "180HeMF"
     }
   ],
   "products": [],

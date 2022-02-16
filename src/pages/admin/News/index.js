@@ -1,4 +1,4 @@
-import { get, getAll } from "../../../api/post";
+import { get, getAll, remove } from "../../../api/post";
 import navAdmin from "../header_dashboard";
 
 const adminNews = {
@@ -8,7 +8,6 @@ const adminNews = {
         <div class="min-h-full">
       <!-- Include Nav admin -->
         ${navAdmin.render()}
-        
         <header class="bg-white shadow">
           <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <!-- This example requires Tailwind CSS v2.0+ -->
@@ -65,7 +64,7 @@ const adminNews = {
                         ${data.map((post, index) => /* html */`
                             <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
-                            ${index + 1}
+                              ${index + 1}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -73,14 +72,13 @@ const adminNews = {
                                 </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" width="400">
-                                ${post.desc}
+                                <img src="${post.img}" width="30%" />
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                <button  class="btn btn-delete text-indigo-600 hover:text-indigo-900 px-4 py-3 text-white">Delete</button>
+                                <button data-id="${post.id}"  class="btn btn-delete text-indigo-600 hover:text-indigo-900 px-4 py-3 text-white">Delete</button>
                             </td>
                         </tr>
-                            
                         `).join("")}
                         </tbody>
                 </table>
@@ -94,9 +92,23 @@ const adminNews = {
       </main>
     </div>`;
     },
-    // afterRender() {
-    //     const btns = document.querySelectorAll(".btn");
-    //     console.log("btns");
-    // },
+    
+    afterRender() {
+      // lay tat ca button co class la btn
+      const btn = document.querySelectorAll(".btn");
+
+      // duyet btn vi nhieu element, gan id button vao tham so buttonEle
+      btn.forEach((buttonEle) => {
+        // lay id button thong qua data-id
+        const idBtn = buttonEle.dataset.id;
+        buttonEle.addEventListener("click", (e) => {
+          const confim = window.confirm("Ban muon xoa san pham?");
+          if(confim){
+            remove(idBtn) .then(() => window.alert("Xoa thanh cong!"));
+          }
+        })
+      })
+
+    }
 };
 export default adminNews;
