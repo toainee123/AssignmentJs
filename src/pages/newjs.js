@@ -1,4 +1,4 @@
-import { getAll } from "../api/post";
+import { getAll } from "../api/posts";
 
 const Newsjs = {
     async render() {

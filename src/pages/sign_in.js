@@ -1,5 +1,6 @@
 import Header from "../component/header";
 import footer from "../component/footer";
+import { signin } from "../api/users";
 
 const signIn = {
     render() {
@@ -19,7 +20,7 @@ const signIn = {
           </a>
         </p>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <form class="mt-8 space-y-6" id="formSignin">
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
@@ -62,7 +63,7 @@ const signIn = {
               <span class="absolute left-0 inset-y-0 flex items-center pl-3">
               
               </span>
-              Sign up
+              Dang nhap
           </button></a>
         </div>
       </form>
@@ -71,5 +72,24 @@ const signIn = {
       ${footer.render()}
           `;
     },
+    afterRender() {
+
+      const formSignin = document.querySelector("#formSignin");
+      formSignin.addEventListener("submit",async (e) => {
+        e.preventDefault();
+        try {
+          const respon = await signin({
+            email: document.querySelector("#email-address").value,
+            password: document.querySelector("#password").value
+          })
+          localStorage.setItem("user", JSON.stringify(respon.data.user));
+        } catch (error) {
+            alert("Tai khoan khong chinh xac");
+        }
+      })
+
+
+
+    }
 };
 export default signIn;

@@ -1,6 +1,6 @@
 import Header from "../component/header";
 import footer from "../component/footer";
-import { signup } from "../api/user";
+import { signup } from "../api/users";
 
 const signUp = {
     render() {
@@ -67,16 +67,20 @@ const signUp = {
         // lay id form submit signup
         const formSignup = document.querySelector("#formSignup");
         // event khi an submit
-        formSignup.addEventListener("submit",  (e) => {
+        formSignup.addEventListener("submit",async  (e) => {
             // preventDefault() ngan chan submit mac dinh cua form
             e.preventDefault();
-                const res = signup({
+            try {
+                 const res =await signup({
                     username: document.querySelector("#username").value,
                     email: document.querySelector("#email-address").value,
                     password: document.querySelector("#password").value,
                 })
                 console.log(res);
-            
+                
+            } catch (error) {
+                alert("Tai khoan da ton tai!");    
+            }
 
         });
 

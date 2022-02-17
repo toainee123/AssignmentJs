@@ -114,5 +114,24 @@
     }
   ],
   "products": [],
-  "users": []
+  "users": [
+    {
+      "email": "toaibvph16467@fpt.edu.vn",
+      "password": "$2a$10$fd/MND3dYoe/BF.5BwWA..3P5xmNhQwW31.cZ0rqmCUST/7fAeK46",
+      "username": "s",
+      "id": 1
+    },
+    {
+      "email": "buitoai2031@gmail.com",
+      "password": "$2a$10$Z8mrYaoVQzf3MBwy4xTdRu7DTJih8a9sJWaWTIFVFOaB7eVkYddu2",
+      "username": "sa",
+      "id": 2
+    },
+    {
+      "email": "nvh5102000@gmail.com",
+      "password": "$2a$10$Y/wHrfGXQXtC308j84ao/euHf.6pgS.Fi5MCXjmMRr.1Nj2ObqKkG",
+      "username": "c",
+      "id": 3
+    }
+  ]
 }

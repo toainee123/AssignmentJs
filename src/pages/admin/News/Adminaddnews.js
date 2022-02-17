@@ -1,5 +1,5 @@
 import navAdmin from "../header_dashboard";
-import { add } from "../../../api/post";
+import { add } from "../../../api/posts";
 import axios from "axios";
 const adminAddnews = {
     render() {

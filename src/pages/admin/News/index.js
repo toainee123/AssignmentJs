@@ -1,4 +1,4 @@
-import { get, getAll, remove } from "../../../api/post";
+import { get, getAll, remove } from "../../../api/posts";
 import navAdmin from "../header_dashboard";
 
 const adminNews = {
@@ -75,7 +75,7 @@ const adminNews = {
                                 <img src="${post.img}" width="30%" />
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="/update/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                 <button data-id="${post.id}"  class="btn btn-delete text-indigo-600 hover:text-indigo-900 px-4 py-3 text-white">Delete</button>
                             </td>
                         </tr>

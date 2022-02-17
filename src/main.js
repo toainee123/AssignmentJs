@@ -8,7 +8,7 @@ import signUp from "./pages/sign_up";
 import dashBoard from "./pages/admin/Dashboard";
 import adminNews from "./pages/admin/News";
 import adminAddnews from "./pages/admin/News/Adminaddnews";
-
+import newUpdate from "./pages/admin/updateNew";
 const router = new Navigo("/", { linksSelector: "a" });
 const print = async (content, id) => {
     // document.getElementById("Header").innerHTML = Header.render();
@@ -26,7 +26,7 @@ router.on({
         const { id } = data;
         print(NewDetail, id);
     },
-    "/sign_in": () => {
+    "/signin": () => {
         print(signIn);
     },
     "/signup": () => {
@@ -41,6 +41,10 @@ router.on({
     "/admin/news/add": () => {
         print(adminAddnews);
     },
+    "/update/:id": ({data}) => {
+        print(newUpdate, data.id)
+        // console.log(data);
+    }
 });
 router.resolve();
 // router.notFound(()=> console.log('Not Found Page'))

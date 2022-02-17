@@ -14,7 +14,7 @@ export const add = (post) => {
 }
 export const update = (post) => {
     const url = `/posts/${post.id}`;
-    return instance.put(url, post);
+    return instance.put(url, post)
 }
 export const remove = (id) => {
     const url = `/posts/${id}`;
