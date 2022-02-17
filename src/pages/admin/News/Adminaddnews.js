@@ -81,24 +81,21 @@ const adminAddnews = {
     </div>
     `;
     },
-    afterRender() {
+    afterRender(){
         const formadd = document.querySelector("#formadd");
         const img = document.querySelector("#img");
 
         img.addEventListener("change", async (e) => {
-          const file = e.target.files[0];
-          const CLOUD = "https://api.cloudinary.com/v1_1/toaibvph16467/image/upload";
-          const formData = new FormData();
-          formData.append("file", file);
-          formData.append("upload_preset", "fb8psmbv");
-          const reponse = await axios.post(CLOUD, formData, {
-            headers: {
-              "Content-Type": "application/form-data"
-            }
-          });
-
-
-          // 
+        const file = e.target.files[0];
+        const CLOUD = "https://api.cloudinary.com/v1_1/toaibvph16467/image/upload";
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "fb8psmbv");
+        const reponse = await axios.post(CLOUD, formData, {
+          headers: {
+            "Content-Type": "application/form-data"
+          }
+        });
           formadd.addEventListener("submit", (e) => {
             e.preventDefault();
             add({

@@ -59,7 +59,6 @@ const signUp = {
         </form>
         </div>
         </div>
-
         ${footer.render()}
         `;
     },
