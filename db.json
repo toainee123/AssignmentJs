@@ -132,6 +132,15 @@
       "password": "$2a$10$Y/wHrfGXQXtC308j84ao/euHf.6pgS.Fi5MCXjmMRr.1Nj2ObqKkG",
       "username": "c",
       "id": 3
+    },
+    {
+      "email": "buitoai2031@gmaAil.com",
+      "password": "$2a$10$r6zEMOx0SKI4Cwqbg4eFUO.pthT3hZTsFcLp9k.G.mwXkJvQFC.S.",
+      "username": "toaibui",
+      "id": 4
     }
+  ],
+  "contact": [
+    
   ]
 }

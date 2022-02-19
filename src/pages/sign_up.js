@@ -11,7 +11,7 @@ const signUp = {
         <div class="max-w-md w-full space-y-8">
         <div>
             <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Dang Ky</h2>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign Up</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
             Or
             <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> start your 14-day free trial </a>
@@ -21,12 +21,12 @@ const signUp = {
             <input type="hidden" name="remember" value="true">
             <div class="rounded-md shadow-sm -space-y-px">
             <div>
-                <label class="sr-only">Ten dang nhap</label>
+                <label class="sr-only">Username</label>
                 <input id="username" name="username" type="text" autocomplete="current-password" required class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
             </div>
             <div>
                 <label for="email-address" class="sr-only">Email</label>
-                <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+                <input id="email-address" name="email" type="email" autocomplete="email" required class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
             </div>
             <div>
                 <label for="password" class="sr-only">Password</label>
@@ -70,7 +70,7 @@ const signUp = {
             // preventDefault() ngan chan submit mac dinh cua form
             e.preventDefault();
             try {
-                 const res =await signup({
+                 const res = await signup({
                     username: document.querySelector("#username").value,
                     email: document.querySelector("#email-address").value,
                     password: document.querySelector("#password").value,

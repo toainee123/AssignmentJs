@@ -4,7 +4,7 @@ const Newsjs = {
     async render() {
         const { data } = await getAll()
         return `
-        <h2 class="font-semibold text-2xl text-blue-900 my-4 uppercase">Tin tức học tập</h2>
+        <h2 class="mt-5 mb-4 text-center font-semibold text-2xl text-blue-900 my-4 uppercase">Sản phẩm bán chạy</h2>
         <div class="news">
             <div class="grid grid-cols-3 gap-8"
                 ${data.map((post) => `

@@ -9,6 +9,8 @@ import dashBoard from "./pages/admin/Dashboard";
 import adminNews from "./pages/admin/News";
 import adminAddnews from "./pages/admin/News/Adminaddnews";
 import newUpdate from "./pages/admin/updateNew";
+import contact from "./pages/contact";
+import product from "./pages/product";
 const router = new Navigo("/", { linksSelector: "a" });
 const print = async (content, id) => {
     // document.getElementById("Header").innerHTML = Header.render();
@@ -44,6 +46,12 @@ router.on({
     "/update/:id": ({data}) => {
         print(newUpdate, data.id)
         // console.log(data);
+    },
+    "/contact": () => {
+        print(contact)
+    },
+    "/product": () => {
+        print(product)
     }
 });
 router.resolve();
