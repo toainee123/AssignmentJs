@@ -1,6 +1,7 @@
 import Header from "../component/header";
 import footer from "../component/footer";
 import { get } from "../api/posts";
+import { addCart } from "./logicCart";
 const NewDetail = {
     async render(id) {
         const {data} = await get(id);
@@ -43,22 +44,8 @@ const NewDetail = {
               <p class="text-gray-500">${data.desc}</p>
       
               <div class="flex py-4 space-x-4">
-                <div class="relative">
-                  <div class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-black tracking-wide font-semibold">Số lượng</div>
-                  <select class="cursor-pointer appearance-none rounded-2xl border border-gray-200 pl-8 pr-8 h-14 flex items-end pb-1 text-black">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-      
-                  <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-                  </svg>
-                </div>
-      
-                <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
+                <input type="hidden" value="1" id="quantity" />
+                <button type="button" class="btnAddCart h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
                   Add to Cart
                 </button>
               </div>
@@ -71,5 +58,17 @@ const NewDetail = {
         `;
         // console.log(result);
     },
+    afterRender(id){
+     const btnAddCart =  document.querySelector(".btnAddCart");
+     btnAddCart.addEventListener('click',async (e) =>{
+        e.preventDefault();
+        const {data} = await get(id);
+        // ...data: copy data va them key quantity vs gtri mac dinh = 1
+        addCart({...data, quantity: +document.querySelector("#quantity").value}, ()=>{
+          alert("Them sp vao gio hang");
+        })
+      // console.log(addCart);
+     })
+    }
 };
 export default NewDetail;

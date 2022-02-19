@@ -11,12 +11,13 @@ import adminAddnews from "./pages/admin/News/Adminaddnews";
 import newUpdate from "./pages/admin/updateNew";
 import contact from "./pages/contact";
 import product from "./pages/product";
+import Cart from "./pages/cart";
 const router = new Navigo("/", { linksSelector: "a" });
 const print = async (content, id) => {
     // document.getElementById("Header").innerHTML = Header.render();
     document.getElementById("app").innerHTML = await content.render(id);
     if (content.afterRender) {
-        content.afterRender();
+        content.afterRender(id);
     }
     // document.getElementById("footer").innerHTML = footer.render();
 };
@@ -52,6 +53,9 @@ router.on({
     },
     "/product": () => {
         print(product)
+    },
+    "/cart": () => {
+        print(Cart)
     }
 });
 router.resolve();
