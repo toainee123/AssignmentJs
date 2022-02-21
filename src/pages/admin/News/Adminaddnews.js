@@ -55,6 +55,10 @@ const adminAddnews = {
               <label for="content" class="sr-only">Nội dung</label>
               <input id="content" name="content" type="text" autocomplete="current-password" required class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nội dung bài viết">
             </div>
+            <div>
+              <label for="price" class="sr-only">Giá tiền</label>
+              <input id="price" name="price" type="text" autocomplete="current-password" required class="mt-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Giá tiền">
+            </div>
           </div>
 
           <div class="flex items-center justify-between">
@@ -102,6 +106,7 @@ const adminAddnews = {
               title: document.querySelector("#title").value,
               img: reponse.data.url,
               desc: document.querySelector("#content").value,
+              price: document.querySelector("#price").value,
             });
             
           });
